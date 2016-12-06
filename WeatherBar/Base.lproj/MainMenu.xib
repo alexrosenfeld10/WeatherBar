@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WeatherBar" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="Wq6-Ux-mrN" customClass="StatusMenuController" customModule="WeatherBar" customModuleProvider="target">
+            <connections>
+                <outlet property="statusMenu" destination="Z5e-tu-hhU" id="Asf-1T-yQR"/>
+                <outlet property="weatherView" destination="UaQ-Af-9f1" id="JkE-No-EQv"/>
+            </connections>
+        </customObject>
+        <menu id="Z5e-tu-hhU">
+            <items>
+                <menuItem title="Update" id="sos-G9-Klf">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateClicked:" target="Wq6-Ux-mrN" id="bdz-3M-dMQ"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Weather" id="eaH-dR-nku">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="weatherClicked:" target="Wq6-Ux-mrN" id="j9a-Yo-UVe"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Preferences" id="EbX-eC-49H">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesClicked:" target="Wq6-Ux-mrN" id="hO8-Qe-U5B"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" id="4no-me-f2X">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="Wq6-Ux-mrN" id="Rjs-0T-Xr4"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-50" y="268"/>
+        </menu>
+        <customFormatter id="wC9-zV-i5a"/>
+        <customView id="UaQ-Af-9f1" customClass="WeatherView" customModule="WeatherBar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="265" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4d-Id-lm6">
+                    <rect key="frame" x="20" y="22" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="zGK-f7-sJa"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZWI-0w-nlb">
+                    <rect key="frame" x="83" y="55" width="164" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="City" id="ebh-BW-YLj">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KhS-QH-NlO" userLabel="Temperature and Conditions">
+                    <rect key="frame" x="83" y="30" width="176" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Temperature and Conditions" id="qHz-eK-XJt">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <connections>
+                <outlet property="cityTextField" destination="ebh-BW-YLj" id="FDS-PQ-F4Y"/>
+                <outlet property="currentConditionsTextField" destination="qHz-eK-XJt" id="ABY-oR-WjT"/>
+                <outlet property="imageView" destination="zGK-f7-sJa" id="jir-hS-taK"/>
+            </connections>
+            <point key="canvasLocation" x="-35.5" y="417"/>
+        </customView>
+    </objects>
+</document>
